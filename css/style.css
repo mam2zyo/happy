@@ -1,0 +1,403 @@
+/* Design System & Variables */
+:root {
+  --bg-app: #F7F4EF;
+  --bg-card: #FFFFFF;
+  --color-primary: #8F6B41;
+  --color-primary-dark: #5C4328;
+  --color-accent: #C5A059;
+  --color-text-dark: #2C2620;
+  --color-text-light: #706356;
+  --color-border: rgba(143, 107, 65, 0.15);
+  --color-shadow: rgba(44, 38, 32, 0.06);
+  --font-serif: "Noto Serif KR", Georgia, serif;
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", sans-serif;
+  --max-width: 480px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #E2DDD5;
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Mobile Frame Wrapper */
+.phone-frame {
+  width: 100%;
+  max-width: var(--max-width);
+  background-color: var(--bg-app);
+  min-height: 100vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Floating Top Banner */
+.hero-header {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  background: linear-gradient(180deg, rgba(247, 244, 239, 0.2) 0%, var(--bg-app) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.4;
+  word-break: keep-all;
+  margin-bottom: 10px;
+}
+
+.hero-divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  margin: 20px auto 10px auto;
+}
+
+.hero-logo {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 5px;
+}
+
+/* Card Container standard */
+.card-section {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  margin: 15px 20px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease;
+}
+
+/* Invitation message styling */
+.invitation-text {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--color-text-light);
+  text-align: center;
+  line-height: 2.0;
+  word-break: keep-all;
+}
+
+.invitation-salutation {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+/* Info List Style */
+.info-section {
+  background-color: var(--bg-card);
+}
+
+.info-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-primary-dark);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+}
+
+.info-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  margin: 8px auto 0 auto;
+}
+
+.info-list {
+  list-style: none;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  width: 55px;
+  font-weight: 700;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.info-content {
+  color: var(--color-text-dark);
+}
+
+/* Interactive Map & Nav Buttons */
+.map-container {
+  width: 100%;
+  height: 240px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Loader indicator inside map */
+.map-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F3EFE9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-light);
+  font-size: 13px;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.spinner {
+  border: 3px solid rgba(143, 107, 65, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--color-primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Nav Actions Flex */
+.map-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-kakao {
+  background-color: #FEE500;
+  color: #191919;
+}
+
+.btn-kakao:active {
+  background-color: #E2CC00;
+  transform: translateY(1px);
+}
+
+.btn-tmap {
+  background-color: #1A73E8;
+  color: #FFFFFF;
+}
+
+.btn-tmap:active {
+  background-color: #1557B0;
+  transform: translateY(1px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Volunteer Contacts List */
+.contacts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FAF8F5;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.contact-card:active {
+  background-color: #F4EFEB;
+  transform: scale(0.99);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.contact-phone {
+  font-size: 13px;
+  color: var(--color-text-light);
+  margin-top: 2px;
+}
+
+.btn-call {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-app);
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-call:active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Footer & Prayer */
+.footer-section {
+  text-align: center;
+  padding: 50px 30px 60px 30px;
+  background-color: #EDE9E2;
+  border-top: 1px solid var(--color-border);
+}
+
+.prayer-box {
+  margin-bottom: 30px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 2.0;
+  color: var(--color-text-light);
+  word-break: keep-all;
+}
+
+.prayer-title {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+
+.footer-logo {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.footer-copyright {
+  font-size: 11px;
+  color: #9C9083;
+  margin-top: 6px;
+}
+
+/* Warning API alert box */
+.api-warning {
+  background-color: #FFF3CD;
+  color: #856404;
+  border: 1px solid #FFEEBA;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 10px 20px 0 20px;
+  font-size: 12px;
+  display: none; /* Controlled by Javascript */
+  animation: fadeIn 0.5s ease-out;
+}
+
+.api-warning p {
+  margin-bottom: 4px;
+}
+.api-warning p:last-child {
+  margin-bottom: 0;
+}
+.api-warning strong {
+  font-weight: 700;
+}

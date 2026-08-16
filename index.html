@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AA 행복나눔 그룹 공개모임 초대장</title>
+
+  <!-- Font Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Config script loaded first -->
+  <script src="/js/config.js"></script>
+</head>
+
+<body>
+
+  <div class="phone-frame">
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <p class="hero-subtitle">Alcoholics Anonymous</p>
+      <h1 class="hero-title">AA 행복나눔 그룹 공개모임</h1>
+      <div class="hero-divider"></div>
+    </header>
+
+
+    <!-- Section: Invitation -->
+    <section class="card-section">
+      <article class="invitation-text">
+        <p class="invitation-salutation">선생님을 초대합니다</p>
+        <p>AA 행복나눔 그룹이 첫모임을 가진지가 어느덧 13년이 되었습니다.</p>
+        <p style="margin-top: 14px;">서로의 손을 잡고 걸어온<br>때로는 기쁘고, 또 때로는 가슴 아팠던 시간들을 지나<br>지금의 행복나눔 그룹이 되었습니다.</p>
+        <p style="margin-top: 14px;">오늘을 감사하며<br>행복을 같이 나누는<br>작은 공개 모임을 마련하였습니다.</p>
+        <p style="margin-top: 14px;">편안한 마음으로<br>경험과 힘과 희망을 함께<br>나누는 자리가 되길 바랍니다.</p>
+        <p style="margin-top: 20px; font-weight: 600; color: var(--color-primary);">선생님의 발걸음이 회복의 불빛을<br>더욱 환하게 밝혀 줄거라
+          믿습니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- Section: Details -->
+    <section class="card-section">
+      <h2 class="info-title">모임 정보</h2>
+      <ul class="info-list">
+        <li class="info-item">
+          <span class="info-label">일시</span>
+          <span class="info-content"><strong>2026년 6월 28일 (일) 16:00 ~ 18:00</strong></span>
+        </li>
+        <li class="info-item">
+          <span class="info-label">장소</span>
+          <span class="info-content">로뎀나무작은도서관 지하</span>
+        </li>
+        <li class="info-item">
+          <span class="info-label">주소</span>
+          <span class="info-content">경기 시흥시 호현로103번길 25<br><span
+              style="font-size: 12px; color: var(--color-text-light);">(지번: 대야동 463)</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section: Interactive Map -->
+    <section class="card-section">
+      <h2 class="info-title">오시는 길</h2>
+
+      <!-- Kakao Map Container -->
+      <div id="map" class="map-container">
+        <div id="map-loader" class="map-loader">
+          <div class="spinner"></div>
+          <span>지도를 불러오는 중입니다...</span>
+        </div>
+      </div>
+
+      <!-- Map Action Buttons -->
+      <div class="map-actions">
+        <!-- Kakao Map Route Button -->
+        <a id="btn-kakao-nav" href="#" target="_blank" class="btn-nav btn-kakao">
+          <!-- Kakao Talk Icon SVG -->
+          <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor"
+              d="M12 3c-5.523 0-10 3.582-10 8c0 2.87 1.83 5.385 4.578 6.726l-.92 3.38c-.1.37.3.7.63.48l4.02-2.65A11.7 11.7 0 0 0 12 19c5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+          </svg>
+          카카오맵으로 자세히 보기
+        </a>
+
+        <!-- Tmap Navigation Button -->
+        <a id="btn-tmap-nav" href="#" class="btn-nav btn-tmap">
+          <!-- Navigation Arrow SVG -->
+          <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
+          </svg>
+          티맵(TMAP)으로 길찾기
+        </a>
+      </div>
+    </section>
+
+    <!-- Section: Contacts -->
+    <section class="card-section">
+      <h2 class="info-title">봉사자 연락처</h2>
+      <div class="contacts-grid">
+        <!-- contact 1 -->
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="contact-name">시흥조</span>
+            <span class="contact-phone">010-8628-4951</span>
+          </div>
+          <a href="tel:010-8628-4951" class="btn-call" aria-label="시흥조에게 전화 걸기">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- contact 2 -->
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="contact-name">은계박</span>
+            <span class="contact-phone">010-4033-8086</span>
+          </div>
+          <a href="tel:010-4033-8086" class="btn-call" aria-label="은계박에게 전화 걸기">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- contact 3 -->
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="contact-name">신림박</span>
+            <span class="contact-phone">010-3447-9151</span>
+          </div>
+          <a href="tel:010-3447-9151" class="btn-call" aria-label="신림박에게 전화 걸기">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer & AA Serenity Prayer -->
+    <footer class="footer-section">
+      <div class="prayer-box">
+        <p class="prayer-title">평온함을 청하는 기도</p>
+        <p>
+          신이시여,<br>
+          어쩔 수 없는 것을 받아들이는 평온함을 주시고,<br>
+          어쩔 수 있는 것을 바꾸는 용기를 주시고,<br>
+          그리고 이를 구별하는 지혜도 주소서.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
