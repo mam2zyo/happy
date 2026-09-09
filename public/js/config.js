@@ -10,12 +10,12 @@ window.INVITATION_CONFIG = {
   // (https://openapi.sk.com/)
   TMAP_APP_KEY: "Qtb6boLwIUa2DydMR5Phu3eNjjyNXxuXfay5xHE0",
 
-  // Location coordinates for '로뎀나무작은도서관'
-  LATITUDE: 37.447116,
-  LONGITUDE: 126.785933,
-  PLACE_NAME: "로뎀나무작은도서관",
-  ADDRESS: "경기 시흥시 호현로103번길 25 (대야동 463)",
-  
-  // Kakao Map Place Details page URL (https://place.map.kakao.com/...)
-  KAKAO_PLACE_URL: "https://place.map.kakao.com/1151298337"
+  // Location coordinates for '가톨릭대학교 부천성모병원 장례식장'
+  LATITUDE: 37.483983,
+  LONGITUDE: 126.804169,
+  PLACE_NAME: "가톨릭대학교 부천성모병원 장례식장 5층 대강당",
+  ADDRESS: "경기도 부천시 소사로 327",
+
+  // Kakao Map Place Details / Search page URL
+  KAKAO_PLACE_URL: "https://map.kakao.com/link/search/가톨릭대학교 부천성모병원 장례식장"
 };

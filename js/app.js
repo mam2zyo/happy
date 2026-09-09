@@ -168,4 +168,43 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   }
+
+  // 5. Donation Account Copy Logic
+  const btnCopyAccount = document.getElementById("btn-copy-account");
+  const accountNumberEl = document.getElementById("account-number");
+  const toastEl = document.getElementById("toast");
+
+  if (btnCopyAccount && accountNumberEl) {
+    btnCopyAccount.addEventListener("click", () => {
+      const textToCopy = accountNumberEl.innerText.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast("계좌번호가 복사되었습니다.");
+        }).catch(() => {
+          fallbackCopy(textToCopy);
+        });
+      } else {
+        fallbackCopy(textToCopy);
+      }
+    });
+  }
+
+  function fallbackCopy(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    showToast("계좌번호가 복사되었습니다.");
+  }
+
+  function showToast(msg) {
+    if (!toastEl) return;
+    toastEl.innerText = msg;
+    toastEl.classList.add("show");
+    setTimeout(() => {
+      toastEl.classList.remove("show");
+    }, 2500);
+  }
 });
