@@ -66,18 +66,69 @@ body {
   100% { transform: scale(1); }
 }
 
-@keyframes floatSnow {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
-  50% { transform: translateY(-8px) rotate(15deg); opacity: 0.8; }
-  100% { transform: translateY(0) rotate(30deg); opacity: 0.4; }
+@keyframes fallSnow {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(105vh) translateX(35px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-/* Floating Winter Hero Header */
+/* Background Falling Snow Overlay (z-index: 1) */
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -30px;
+  color: #38BDF8;
+  opacity: 0.5;
+  font-size: 14px;
+  user-select: none;
+  animation-name: fallSnow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* Snowflake variations */
+.snowflake:nth-child(1)  { left: 6%;  animation-duration: 7s;    animation-delay: 0s;     font-size: 12px; opacity: 0.5; }
+.snowflake:nth-child(2)  { left: 20%; animation-duration: 10.5s; animation-delay: 2.2s;   font-size: 18px; opacity: 0.4; }
+.snowflake:nth-child(3)  { left: 35%; animation-duration: 8.5s;  animation-delay: 4.1s;   font-size: 14px; opacity: 0.6; }
+.snowflake:nth-child(4)  { left: 52%; animation-duration: 11s;   animation-delay: 1.2s;   font-size: 16px; opacity: 0.5; }
+.snowflake:nth-child(5)  { left: 68%; animation-duration: 9s;    animation-delay: 3.3s;   font-size: 13px; opacity: 0.6; }
+.snowflake:nth-child(6)  { left: 85%; animation-duration: 12.5s; animation-delay: 5.4s;   font-size: 17px; opacity: 0.4; }
+.snowflake:nth-child(7)  { left: 12%; animation-duration: 9.5s;  animation-delay: 3.8s;   font-size: 15px; opacity: 0.5; }
+.snowflake:nth-child(8)  { left: 28%; animation-duration: 7.8s;  animation-delay: 1.7s;   font-size: 12px; opacity: 0.6; }
+.snowflake:nth-child(9)  { left: 44%; animation-duration: 10.8s; animation-delay: 5.9s;   font-size: 19px; opacity: 0.45; }
+.snowflake:nth-child(10) { left: 61%; animation-duration: 8.8s;  animation-delay: 2.7s;   font-size: 14px; opacity: 0.55; }
+.snowflake:nth-child(11) { left: 77%; animation-duration: 11.8s; animation-delay: 0.8s;   font-size: 16px; opacity: 0.4; }
+.snowflake:nth-child(12) { left: 92%; animation-duration: 9.2s;  animation-delay: 4.6s;   font-size: 13px; opacity: 0.6; }
+
+/* Floating Winter Hero Header (z-index: 2) */
 .hero-header {
   position: relative;
+  z-index: 2;
   text-align: center;
   padding: 65px 20px 45px 20px;
-  background: linear-gradient(180deg, #E0F2FE 0%, rgba(240, 244, 248, 0.6) 70%, var(--bg-app) 100%);
+  background: linear-gradient(180deg, #E0F2FE 0%, rgba(240, 244, 248, 0.7) 70%, var(--bg-app) 100%);
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
 }
@@ -120,8 +171,10 @@ body {
   margin: 20px auto 10px auto;
 }
 
-/* Card Container standard */
+/* Card Container standard (z-index: 2) */
 .card-section {
+  position: relative;
+  z-index: 2;
   background-color: var(--bg-card);
   border-radius: 16px;
   margin: 15px 20px;
@@ -438,6 +491,8 @@ body {
 
 /* Footer & Prayer */
 .footer-section {
+  position: relative;
+  z-index: 2;
   text-align: center;
   padding: 50px 30px 60px 30px;
   background-color: #E2E8F0;
