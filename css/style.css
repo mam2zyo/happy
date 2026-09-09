@@ -1,14 +1,15 @@
-/* Design System & Variables */
+/* Design System & Variables - Winter Blue Theme */
 :root {
-  --bg-app: #F7F4EF;
+  --bg-app: #F0F4F8;
   --bg-card: #FFFFFF;
-  --color-primary: #8F6B41;
-  --color-primary-dark: #5C4328;
-  --color-accent: #C5A059;
-  --color-text-dark: #2C2620;
-  --color-text-light: #706356;
-  --color-border: rgba(143, 107, 65, 0.15);
-  --color-shadow: rgba(44, 38, 32, 0.06);
+  --color-primary: #1E40AF;
+  --color-primary-dark: #0F172A;
+  --color-accent: #38BDF8;
+  --color-accent-subtle: #E0F2FE;
+  --color-text-dark: #1E293B;
+  --color-text-light: #475569;
+  --color-border: rgba(30, 64, 175, 0.12);
+  --color-shadow: rgba(15, 23, 42, 0.06);
   --font-serif: "Noto Serif KR", Georgia, serif;
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", sans-serif;
   --max-width: 480px;
@@ -23,7 +24,7 @@
 }
 
 body {
-  background-color: #E2DDD5;
+  background-color: #CBD5E1;
   font-family: var(--font-sans);
   color: var(--color-text-dark);
   line-height: 1.6;
@@ -39,7 +40,7 @@ body {
   max-width: var(--max-width);
   background-color: var(--bg-app);
   min-height: 100vh;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -65,23 +66,41 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Floating Top Banner */
+@keyframes floatSnow {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-8px) rotate(15deg); opacity: 0.8; }
+  100% { transform: translateY(0) rotate(30deg); opacity: 0.4; }
+}
+
+/* Floating Winter Hero Header */
 .hero-header {
   position: relative;
   text-align: center;
-  padding: 60px 20px 40px 20px;
-  background: linear-gradient(180deg, rgba(247, 244, 239, 0.2) 0%, var(--bg-app) 100%);
+  padding: 65px 20px 45px 20px;
+  background: linear-gradient(180deg, #E0F2FE 0%, rgba(240, 244, 248, 0.6) 70%, var(--bg-app) 100%);
   border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
 }
 
 .hero-subtitle {
   font-family: var(--font-serif);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.25em;
   color: var(--color-primary);
   margin-bottom: 12px;
   text-transform: uppercase;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-subtitle::before,
+.hero-subtitle::after {
+  content: "❄";
+  font-size: 11px;
+  color: var(--color-accent);
 }
 
 .hero-title {
@@ -95,18 +114,10 @@ body {
 }
 
 .hero-divider {
-  width: 40px;
+  width: 50px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
   margin: 20px auto 10px auto;
-}
-
-.hero-logo {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--color-accent);
-  margin-bottom: 5px;
 }
 
 /* Card Container standard */
@@ -117,7 +128,11 @@ body {
   padding: 30px 24px;
   box-shadow: 0 4px 20px var(--color-shadow);
   border: 1px solid var(--color-border);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-section:hover {
+  box-shadow: 0 6px 24px rgba(30, 64, 175, 0.08);
 }
 
 /* Invitation message styling */
@@ -135,6 +150,7 @@ body {
   color: var(--color-primary-dark);
   margin-bottom: 20px;
   font-size: 17px;
+  letter-spacing: 0.05em;
 }
 
 /* Info List Style */
@@ -155,10 +171,11 @@ body {
 .info-title::after {
   content: "";
   display: block;
-  width: 30px;
-  height: 1.5px;
-  background-color: var(--color-accent);
+  width: 36px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
   margin: 8px auto 0 auto;
+  border-radius: 2px;
 }
 
 .info-list {
@@ -196,7 +213,7 @@ body {
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 /* Loader indicator inside map */
@@ -206,7 +223,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #F3EFE9;
+  background-color: #E2E8F0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,7 +235,7 @@ body {
 }
 
 .spinner {
-  border: 3px solid rgba(143, 107, 65, 0.1);
+  border: 3px solid rgba(30, 64, 175, 0.1);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -265,12 +282,12 @@ body {
 }
 
 .btn-tmap {
-  background-color: #1A73E8;
+  background-color: #1E40AF;
   color: #FFFFFF;
 }
 
 .btn-tmap:active {
-  background-color: #1557B0;
+  background-color: #1E3A8A;
   transform: translateY(1px);
 }
 
@@ -294,7 +311,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FAF8F5;
+  background-color: #F8FAFC;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 14px 18px;
@@ -302,7 +319,7 @@ body {
 }
 
 .contact-card:active {
-  background-color: #F4EFEB;
+  background-color: #E0F2FE;
   transform: scale(0.99);
 }
 
@@ -327,7 +344,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--bg-app);
+  background-color: #E0F2FE;
   border: 1px solid var(--color-border);
   display: flex;
   justify-content: center;
@@ -344,7 +361,7 @@ body {
 
 /* Donation Account Section */
 .account-card {
-  background-color: #FAF8F5;
+  background-color: #F8FAFC;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 20px;
@@ -370,12 +387,12 @@ body {
 .account-number {
   font-size: 17px;
   font-weight: 700;
-  color: var(--color-text-dark);
+  color: var(--color-primary-dark);
   letter-spacing: 0.03em;
 }
 
 .btn-copy {
-  background-color: var(--bg-app);
+  background-color: #E0F2FE;
   border: 1px solid var(--color-border);
   color: var(--color-primary);
   padding: 5px 12px;
@@ -402,7 +419,7 @@ body {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%) translateY(50px);
-  background-color: rgba(44, 38, 32, 0.9);
+  background-color: rgba(15, 23, 42, 0.92);
   color: #FFFFFF;
   padding: 10px 20px;
   border-radius: 20px;
@@ -411,7 +428,7 @@ body {
   transition: all 0.3s ease;
   pointer-events: none;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
 }
 
 .toast-msg.show {
@@ -423,7 +440,7 @@ body {
 .footer-section {
   text-align: center;
   padding: 50px 30px 60px 30px;
-  background-color: #EDE9E2;
+  background-color: #E2E8F0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -452,7 +469,7 @@ body {
 
 .footer-copyright {
   font-size: 11px;
-  color: #9C9083;
+  color: #64748B;
   margin-top: 6px;
 }
 
