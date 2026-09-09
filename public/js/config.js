@@ -11,8 +11,8 @@ window.INVITATION_CONFIG = {
   TMAP_APP_KEY: "Qtb6boLwIUa2DydMR5Phu3eNjjyNXxuXfay5xHE0",
 
   // Location coordinates for '가톨릭대학교 부천성모병원 장례식장'
-  LATITUDE: 37.486667 //37.483983,
-  LONGITUDE: 126.792178 //126.804169,
+  LATITUDE: 37.487497 // 37.486667 37.483983,
+  LONGITUDE: 126.793038 // 126.790531 126.792178 //126.804169,
   PLACE_NAME: "가톨릭대학교 부천성모병원 장례식장",
   ADDRESS: "경기도 부천시 소사로 327",
 
