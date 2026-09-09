@@ -103,10 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const map = new kakao.maps.Map(mapContainer, mapOption);
 
-    // Map controls
-    const mapTypeControl = new kakao.maps.MapTypeControl();
-    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
+    // Map controls (Keep zoom control only for a cleaner UI)
     const zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
